@@ -1,3 +1,2 @@
 <?php
-
     $_SERVER['HOMEPATH'] = '~';
