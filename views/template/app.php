@@ -25,7 +25,7 @@
 
     <main class="mx-auto max-w-screen-xlg space-y-6 mt-6 px-6">
         <?php 
-            require "../views/{$view}.view.php"; ;
+            require "../views/{$view}.view.php";
         ?>
     </main>
     

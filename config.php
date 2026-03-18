@@ -5,7 +5,7 @@ return [
         'driver' => 'mysql',
         'host' => 'localhost',
         'port' => 3306,
-        'dbname' => 'notices',
+        'dbname' => 'noticias',
         'user' => 'root',
         'pass' => ''
     ]

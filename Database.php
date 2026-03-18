@@ -3,12 +3,13 @@
 class Database {
     private $db;
 
-    public function __constructor($config){
+    public function __construct($config){
         $driver = $config['driver'];
         unset($config['driver']);
-        $dsn = $driver. ":" . http_build_query($config, '', ';');
+        $dsn = $driver . ":" . http_build_query($config, '', ';');
         
         $this->db = new PDO($dsn);
+        
     }
 
     public function query($query, $class = null , $params = []){
