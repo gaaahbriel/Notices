@@ -4,5 +4,9 @@
     <button type="submit">🔍</button>
 </form>
 <section class="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    <?php require 'partials/_noticia.php'; ?>
+    <?php 
+    foreach($noticias as $noticia){
+        require 'partials/_noticia.php';
+    }
+    ?>
 </section>

@@ -4,11 +4,11 @@
             <img src="" alt="" class="w-60 rounded">IMAGEM
         </div>
         <div class="flex flex-col gap-1">
-            <a href="" class="font-semibold hover:underline">Nome do evento</a>
+            <a href="" class="font-semibold hover:underline"><?= $noticia->nomeDoEvento ?></a>
             <div div="text-cs italic">Autor do evento</div>
         </div>
     </div>
     <div class="text-sm mt-2">
-        descrição do evento
+        <?= $noticia->descricaoDoEvento ?>
     </div>
 </div>
