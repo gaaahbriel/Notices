@@ -1,7 +1,7 @@
 <div class="mt-20 mx-120">
     <div class="border border-[#cde3bb] rounded">
         <h1 class="border-b border-[#cde3bb] text-[#cde3bb] font-bold px-4 py-2">Login</h1>
-        <form class="p-4 space-y-4" action="POST">
+        <form class="p-4 space-y-4" method="POST" action="/registrar">
             <div class="flex flex-col">
                 <label class="text-[#cde3bb] mb-1 text-xl">Usuário</label>
                 <input
@@ -22,7 +22,7 @@
                 <label class="text-[#cde3bb] mb-1 text-xl">Confirmar senha</label>
                 <input
                     type="password"
-                    name="ConfirmarSenha"
+                    name="senha_confirmacao"
                     class="border-[#cde3bb] border-2 rounded-md bg-[#004e4c] focus:outline-none px-2 py-1"
                     placeholder="Senha">
             </div>
