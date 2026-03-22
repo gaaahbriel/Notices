@@ -15,15 +15,27 @@
             </div>
             <ul class="flex space-x-4 font-bold">
                 <li><a href="/" class="text-[#cde3bb]">Noticias</a></li>
-                <li><a href="/minhas-noticias" class="hover::underline">Minhas Noticias</a></li>
+                <?php if(auth()): ?>
+                    <li><a href="/minhas-noticias" class="hover::underline">Minhas Noticias</a></li>
+                <?php endif; ?>
             </ul>
             <ul class="flex space-x-4 font-bold">
-                <li><a href="/login" class="hover:underline">Login</a></li>
+                <?php if(auth()): ?>
+                    <li><a href="/logout" class="hover:underline"><?= auth()->usuario ?></a></li>
+                <?php else: ?>
+                    <li><a href="/login" class="hover:underline">Login</a></li>
+                    <li><a href="/registrar" class="hover:underline">Registrar</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
 
     <main class="mx-auto max-w-screen-xlg space-y-6 mt-6 px-6">
+        <?php if($mensagem = flash()->get('mensagem')): ?>
+            <div class="border-green-800 bg-green-900 text-green-400 ox-4 py-1 rounded-md border-2">
+                <?= $mensagem ?>
+            </div>
+        <?php endif; ?>
         <?php 
             require "../views/{$view}.view.php";
         ?>

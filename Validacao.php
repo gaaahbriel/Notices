@@ -86,7 +86,7 @@ class Validacao
         if ($nomeCustomizado) {
             $chave .= '_' . $nomeCustomizado;
         }
-
+        flash()->push($chave, $this->validacoes);
 
         return sizeof($this->validacoes) > 0;
     }

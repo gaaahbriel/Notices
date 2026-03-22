@@ -32,7 +32,7 @@ function abort($code)
 
 function flash()
 {
-    //return new Flash;
+    return new Flash;
 }
 
 function config($chave = null){
@@ -43,4 +43,12 @@ function config($chave = null){
     }
 
     return $config;
+}
+
+function auth(){
+    if(!isset($_SESSION['auth'])){
+        return null;
+    }
+
+    return $_SESSION['auth'];
 }

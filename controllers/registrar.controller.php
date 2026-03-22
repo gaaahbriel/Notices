@@ -1,16 +1,15 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $validacoes = Validacao::validar([
+    $validacao = Validacao::validar([
         'usuario' => ['required', 'unique:usuarios'],
         'senha' => ['required', 'confirmed', 'min:8', 'max:30', 'strong']
     ], $_POST);
 
-    if($validacoes->naoPassou('registrar')){
+    if($validacao->naoPassou('registrar')){
         header('location: /registrar');
         exit();
     }
-
 
     $database->query(
         query: "INSERT INTO usuarios(usuario, senha) VALUES (:usuario, :senha)",
@@ -20,8 +19,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         ]
     );
 
+    flash()->push('mensagem', 'Registrado com sucesso!');
     header('location: /registrar');
     exit();
 }
-
 view('registrar');
